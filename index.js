@@ -195,4 +195,20 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+
+  // --- Contact Form Submission Mailto handler ---
+  const contactForm = document.getElementById('portfolio-contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('contact-name').value;
+      const email = document.getElementById('contact-email').value;
+      const message = document.getElementById('contact-message').value;
+      
+      const subject = encodeURIComponent(`Portfolio Message from ${name}`);
+      const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+      
+      window.location.href = `mailto:nithishkumarpujari@gmail.com?subject=${subject}&body=${body}`;
+    });
+  }
 });
