@@ -208,7 +208,10 @@ document.addEventListener('DOMContentLoaded', () => {
       const subject = encodeURIComponent(`Portfolio Message from ${name}`);
       const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
       
-      window.location.href = `mailto:nithishkumarpujari@gmail.com?subject=${subject}&body=${body}`;
+      // Creating a temporary <a> tag is a standard workaround for browser security blocks
+      const mailtoLink = document.createElement('a');
+      mailtoLink.href = `mailto:nithishkumarpujari@gmail.com?subject=${subject}&body=${body}`;
+      mailtoLink.click();
     });
   }
 });
