@@ -216,7 +216,9 @@ document.addEventListener('DOMContentLoaded', () => {
       // Creating a temporary <a> tag is a standard workaround for browser security blocks
       const mailtoLink = document.createElement('a');
       mailtoLink.href = `mailto:nithishkumarpujari@gmail.com?subject=${subject}&body=${body}`;
+      document.body.appendChild(mailtoLink);
       mailtoLink.click();
+      document.body.removeChild(mailtoLink);
     });
   }
 });
