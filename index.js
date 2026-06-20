@@ -197,13 +197,18 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --- Contact Form Submission Mailto handler ---
-  const contactForm = document.getElementById('portfolio-contact-form');
-  if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
+  const submitBtn = document.getElementById('btn-submit-message');
+  if (submitBtn) {
+    submitBtn.addEventListener('click', (e) => {
       const name = document.getElementById('contact-name').value;
       const email = document.getElementById('contact-email').value;
       const message = document.getElementById('contact-message').value;
+      
+      const form = document.getElementById('portfolio-contact-form');
+      if (form && !form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
       
       const subject = encodeURIComponent(`Portfolio Message from ${name}`);
       const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
