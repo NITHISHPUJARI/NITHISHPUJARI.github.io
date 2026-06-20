@@ -4,10 +4,10 @@ document.addEventListener('DOMContentLoaded', () => {
     { text: 'npm run start-ai', delay: 500, class: 'command' },
     { text: '> pujari-nithish-kumar@3.0.0 start-ai', delay: 100, class: 'system' },
     { text: '> node agents/initialize.js', delay: 200, class: 'system' },
-    { text: '⚡ Booting ARM Cortex-M core (48MHz)... [OK]', delay: 400, class: 'success' },
+    { text: '⚙️ Loading hardware abstraction layer... [OK]', delay: 300, class: 'success' },
     { text: '🧠 Initializing Microsoft Foundry Agent Chains... [OK]', delay: 300, class: 'success' },
     { text: '🧬 Connecting to local SLM (Gemma-2B) vector store... [OK]', delay: 300, class: 'success' },
-    { text: '⚡ "Silicon meets Intelligence" — System Online.', delay: 500, class: 'info' }
+    { text: '⚡ System Online. Agentic Core Active.', delay: 500, class: 'info' }
   ];
 
   const terminalBody = document.getElementById('terminal-text');
