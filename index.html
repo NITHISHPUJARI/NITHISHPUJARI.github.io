@@ -1,36 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Pujari Nithish Kumar | Agentic AI Engineer & LLM Specialist</title>
-  <meta name="description" content="Portfolio of Pujari Nithish Kumar - Agentic AI Engineer specializing in autonomous AI agents, LLM orchestration, and enterprise Generative AI systems, with a foundation in low-level Embedded Systems.">
-  
+  <meta name="description"
+    content="Portfolio of Pujari Nithish Kumar - Agentic AI Engineer specializing in autonomous AI agents, LLM orchestration, and enterprise Generative AI systems, with a foundation in low-level Embedded Systems.">
+
+  <script>
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    if (!window.location.hash) {
+      window.scrollTo(0, 0);
+    }
+  </script>
   <!-- Custom CSS Design System -->
-  <link rel="stylesheet" href="index.css?v=3.3.0">
+  <link rel="stylesheet" href="index.css?v=3.9.0">
 </head>
+
 <body>
-  <div class="bg-ambient-blob" id="blob-3"></div>
+  <!-- Fixed 3D background -->
+  <canvas id="three-bg-canvas"></canvas>
 
   <!-- Header & Navigation -->
   <header>
     <div class="scroll-progress" id="scroll-progress-bar"></div>
     <div class="nav-container">
-      <a href="#hero" class="logo" id="nav-logo">NITHISH</a>
+      <a href="index.html" class="logo" id="nav-logo">NITHISH</a>
       <ul class="nav-links" id="nav-links-menu">
         <li class="nav-link active" data-section="hero"><a href="#hero" id="link-hero">Home</a></li>
         <li class="nav-link" data-section="about"><a href="#about" id="link-about">About</a></li>
         <li class="nav-link" data-section="skills"><a href="#skills" id="link-skills">Skills</a></li>
-        <li class="nav-link" data-section="experience"><a href="#experience" id="link-experience">Experience</a></li>
         <li class="nav-link" data-section="projects"><a href="#projects" id="link-projects">Projects</a></li>
         <li class="nav-link" data-section="contact"><a href="#contact" id="link-contact">Contact</a></li>
-        <li class="nav-link"><a href="Pujari_NithishKumar_Resume.pdf" download id="link-resume" style="color: var(--color-cyan); font-weight: 700;">Resume 📥</a></li>
+        <li class="nav-link"><a href="Pujari_NithishKumar_Resume.pdf" download id="link-resume"
+            style="color: var(--color-cyan); font-weight: 700;">Resume 📥</a></li>
       </ul>
     </div>
   </header>
 
   <main class="app-container">
-    
+
     <!-- Hero Section -->
     <section id="hero">
       <div class="hero-grid">
@@ -42,14 +54,17 @@
             <span class="badge badge-secondary">Background in Embedded Systems</span>
           </div>
           <p class="hero-description">
-            I am an Agentic AI Engineer specializing in enterprise-grade autonomous agents and large language model architectures on Microsoft Azure, backed by a strong foundation in register-level bare-metal Embedded C and real-time systems.
+            I am an Agentic AI Engineer specializing in enterprise-grade autonomous agents and large language model
+            architectures on Microsoft Azure, backed by a strong foundation in register-level bare-metal Embedded C and
+            real-time systems.
           </p>
           <div class="hero-buttons">
             <a href="#projects" class="btn btn-primary" id="btn-hero-projects">View Projects</a>
-            <a href="Pujari_NithishKumar_Resume.pdf" download class="btn btn-outline" id="btn-hero-resume" style="border-color: var(--color-cyan); color: var(--color-cyan);">Resume 📥</a>
+            <a href="Pujari_NithishKumar_Resume.pdf" download class="btn btn-outline" id="btn-hero-resume"
+              style="border-color: var(--color-cyan); color: var(--color-cyan);">Resume 📥</a>
             <a href="#contact" class="btn btn-outline" id="btn-hero-contact">Let's Connect</a>
           </div>
-          
+
           <!-- Terminal typing window -->
           <div class="terminal-window reveal">
             <div class="terminal-header">
@@ -63,13 +78,10 @@
             </div>
           </div>
         </div>
-        
-        <div class="hero-image-container">
-          <div class="hero-image-frame" id="hero-img-frame">
-            <img src="NITHISH.jpg" alt="Pujari Nithish Kumar" id="hero-avatar">
-            <div class="hero-image-ring" id="hero-avatar-ring"></div>
-            <div class="hero-image-ring-pulse"></div>
-          </div>
+
+        <!-- Three.js 3D Brain Viewport Container -->
+        <div class="hero-3d-container">
+          <canvas id="hero-3d-canvas"></canvas>
         </div>
       </div>
     </section>
@@ -80,194 +92,80 @@
         <h2 class="section-title">About Me</h2>
         <p class="section-tagline">/usr/bin/bio</p>
       </div>
+
       <div class="grid-2">
         <div class="glass-card reveal">
-          <h3 style="margin-bottom: 1rem; color: var(--color-primary);">Agentic AI Specialist</h3>
+          <h3
+            style="margin-bottom: 1rem; color: var(--color-primary); font-family: var(--font-heading); font-size: 1.5rem;">
+            Agentic AI Specialist</h3>
           <p style="margin-bottom: 1.5rem; text-wrap: pretty;">
-            Currently at <strong>Accenture</strong>, I engineer autonomous AI agents and Generative AI pipelines for an enterprise platform that circulates <strong>over $80 Billion annually</strong> — where every prompt, every vector retrieval, and every LLM response has real-world financial consequence.
+            Currently at <strong>Accenture</strong>, I engineer autonomous AI agents and Generative AI pipelines for an
+            enterprise platform that circulates <strong>over $80 Billion annually</strong> — where every prompt, every
+            vector retrieval, and every LLM response has real-world financial consequence.
           </p>
           <p style="text-wrap: pretty;">
-            My technical foundation was built in <strong>Embedded Systems</strong>, programming ARM Cortex-M microcontrollers and RTOS schedulers. This background in low-level precision, resource constraints, and determinism shapes my approach to architecting highly optimized and robust Agentic AI architectures.
+            My technical foundation was built in <strong>Embedded Systems</strong>, programming ARM Cortex-M
+            microcontrollers and RTOS schedulers. This background in low-level precision, resource constraints, and
+            determinism shapes my approach to architecting highly optimized and robust Agentic AI architectures.
           </p>
-          
+
           <div style="margin-top: 2rem; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 1.5rem;">
             <p style="font-family: var(--font-mono); font-size: 0.9rem; font-style: italic; color: var(--color-cyan);">
               "Applying low-level precision to enterprise-scale intelligence."
             </p>
           </div>
         </div>
-        
-        <div class="glass-card reveal" style="display: flex; flex-direction: column; justify-content: center; gap: 1.5rem;">
-          <h3 style="margin-bottom: 0.5rem; text-align: center;">By the Numbers</h3>
-          
+
+        <div class="glass-card reveal"
+          style="display: flex; flex-direction: column; justify-content: center; gap: 1.5rem;">
+          <h3 style="margin-bottom: 0.5rem; text-align: center; font-family: var(--font-heading); font-size: 1.5rem;">By
+            the Numbers</h3>
+
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
             <div style="text-align: center;">
-              <div style="font-size: 2.25rem; font-weight: 800; font-family: var(--font-heading); color: var(--color-primary);">$80B+</div>
-              <div style="font-size: 0.8rem; font-family: var(--font-mono); color: var(--color-text-muted);">Annual Platform Scale</div>
+              <div
+                style="font-size: 2.25rem; font-weight: 800; font-family: var(--font-heading); color: var(--color-primary);">
+                $80B+</div>
+              <div style="font-size: 0.8rem; font-family: var(--font-mono); color: var(--color-text-muted);">Annual
+                Platform Scale</div>
             </div>
-            
+
             <div style="text-align: center;">
-              <div style="font-size: 2.25rem; font-weight: 800; font-family: var(--font-heading); color: var(--color-secondary);">87%</div>
-              <div style="font-size: 0.8rem; font-family: var(--font-mono); color: var(--color-text-muted);">Accenture C++ Score</div>
+              <div
+                style="font-size: 2.25rem; font-weight: 800; font-family: var(--font-heading); color: var(--color-secondary);">
+                87%</div>
+              <div style="font-size: 0.8rem; font-family: var(--font-mono); color: var(--color-text-muted);">Accenture
+                C++ Score</div>
             </div>
-            
+
             <div style="text-align: center;">
-              <div style="font-size: 2.25rem; font-weight: 800; font-family: var(--font-heading); color: var(--color-cyan);">2+ Years</div>
-              <div style="font-size: 0.8rem; font-family: var(--font-mono); color: var(--color-text-muted);">Industry Experience</div>
+              <div
+                style="font-size: 2.25rem; font-weight: 800; font-family: var(--font-heading); color: var(--color-cyan);">
+                2+ Years</div>
+              <div style="font-size: 0.8rem; font-family: var(--font-mono); color: var(--color-text-muted);">Industry
+                Experience</div>
             </div>
-            
+
             <div style="text-align: center;">
-              <div style="font-size: 2.25rem; font-weight: 800; font-family: var(--font-heading); color: var(--color-success);">6+</div>
-              <div style="font-size: 0.8rem; font-family: var(--font-mono); color: var(--color-text-muted);">Certs & Awards</div>
+              <div
+                style="font-size: 2.25rem; font-weight: 800; font-family: var(--font-heading); color: var(--color-success);">
+                6+</div>
+              <div style="font-size: 0.8rem; font-family: var(--font-mono); color: var(--color-text-muted);">Certs &
+                Awards</div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills">
-      <div class="section-header">
-        <h2 class="section-title">Tech Arsenal</h2>
-        <p class="section-tagline">/usr/bin/skills</p>
-      </div>
-      
-      <div class="skills-container glass-card reveal">
-        <div class="skills-tabs" role="tablist">
-          <button class="skills-tab-btn active" data-tab="skills-ai" role="tab" aria-selected="true" id="tab-ai">AI & LLM</button>
-          <button class="skills-tab-btn" data-tab="skills-software" role="tab" aria-selected="false" id="tab-software">DevOps & Cloud</button>
-          <button class="skills-tab-btn" data-tab="skills-embedded" role="tab" aria-selected="false" id="tab-embedded">Embedded Systems (Prior)</button>
-          <button class="skills-tab-btn" data-tab="skills-protocols" role="tab" aria-selected="false" id="tab-protocols">Protocols</button>
-        </div>
-        
-        <!-- Tab Panels -->
-        <div class="skills-content-panel active" id="skills-ai" role="tabpanel" aria-labelledby="tab-ai">
-          <div class="skills-grid">
-            <div class="skill-item">
-              <span class="skill-name">Agentic AI Workflows</span>
-              <div class="skill-bar"><div class="skill-fill" data-width="90%" style="width: 90%;"></div></div>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">Generative AI</span>
-              <div class="skill-bar"><div class="skill-fill" data-width="88%" style="width: 88%;"></div></div>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">Microsoft Foundry</span>
-              <div class="skill-bar"><div class="skill-fill" data-width="85%" style="width: 85%;"></div></div>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">Prompt Engineering</span>
-              <div class="skill-bar"><div class="skill-fill" data-width="92%" style="width: 92%;"></div></div>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">Vector Databases</span>
-              <div class="skill-bar"><div class="skill-fill" data-width="80%" style="width: 80%;"></div></div>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">LLM Optimization</span>
-              <div class="skill-bar"><div class="skill-fill" data-width="83%" style="width: 83%;"></div></div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="skills-content-panel" id="skills-embedded" role="tabpanel" aria-labelledby="tab-embedded">
-          <div class="skills-grid">
-            <div class="skill-item">
-              <span class="skill-name">Embedded C</span>
-              <div class="skill-bar"><div class="skill-fill" data-width="88%"></div></div>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">C/C++</span>
-              <div class="skill-bar"><div class="skill-fill" data-width="85%"></div></div>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">FreeRTOS</span>
-              <div class="skill-bar"><div class="skill-fill" data-width="78%"></div></div>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">ARM Cortex-M</span>
-              <div class="skill-bar"><div class="skill-fill" data-width="80%"></div></div>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">STM32 Microcontrollers</span>
-              <div class="skill-bar"><div class="skill-fill" data-width="82%"></div></div>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">Linux Driver Dev</span>
-              <div class="skill-bar"><div class="skill-fill" data-width="70%"></div></div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="skills-content-panel" id="skills-protocols" role="tabpanel" aria-labelledby="tab-protocols">
-          <div class="skills-grid">
-            <div class="skill-item">
-              <span class="skill-name">UART</span>
-              <div class="skill-bar"><div class="skill-fill" data-width="90%"></div></div>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">I2C</span>
-              <div class="skill-bar"><div class="skill-fill" data-width="85%"></div></div>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">SPI</span>
-              <div class="skill-bar"><div class="skill-fill" data-width="82%"></div></div>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">HAL Drivers</span>
-              <div class="skill-bar"><div class="skill-fill" data-width="80%"></div></div>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">GDB Debugging</span>
-              <div class="skill-bar"><div class="skill-fill" data-width="75%"></div></div>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">NVIC / DMA</span>
-              <div class="skill-bar"><div class="skill-fill" data-width="78%"></div></div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="skills-content-panel" id="skills-software" role="tabpanel" aria-labelledby="tab-software">
-          <div class="skills-grid">
-            <div class="skill-item">
-              <span class="skill-name">Python</span>
-              <div class="skill-bar"><div class="skill-fill" data-width="90%"></div></div>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">C# & .NET</span>
-              <div class="skill-bar"><div class="skill-fill" data-width="80%"></div></div>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">Azure DevOps</span>
-              <div class="skill-bar"><div class="skill-fill" data-width="85%"></div></div>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">Git & Version Control</span>
-              <div class="skill-bar"><div class="skill-fill" data-width="90%"></div></div>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">VS Code / STM32Cube</span>
-              <div class="skill-bar"><div class="skill-fill" data-width="88%"></div></div>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">Agile SDLC</span>
-              <div class="skill-bar"><div class="skill-fill" data-width="82%"></div></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Experience Section (Timeline) -->
-    <section id="experience">
+    <!-- Experience Timeline Section -->
+    <section id="experience" style="padding-top: 20px;">
       <div class="section-header">
         <h2 class="section-title">Timeline</h2>
         <p class="section-tagline">/usr/bin/history</p>
       </div>
-      
+
       <div class="timeline">
-        
         <!-- Experience Item 1 -->
         <div class="timeline-item reveal">
           <div class="timeline-dot"></div>
@@ -279,10 +177,15 @@
             <h3>Packaged App Development Associate</h3>
             <h4>Accenture Solutions Private Limited, Bengaluru</h4>
             <ul>
-              <li><strong>Agentic AI Workflows:</strong> Designed and deployed autonomous Agentic AI systems using Microsoft Foundry (formerly Azure AI Studio), automating complex workflows for a platform circulating over $80 billion annually.</li>
-              <li><strong>Generative AI & Data Retrieval:</strong> Implemented GenAI solutions integrated with Vector Databases to enable semantic search and context management for large-scale datasets.</li>
-              <li><strong>Prompt Engineering:</strong> Applied advanced prompt engineering techniques to optimize LLM performance, ensuring high accuracy, safety, and compliance.</li>
-              <li><strong>System Validation:</strong> Conducted system-level validation and managed software defects using Azure DevOps.</li>
+              <li><strong>Agentic AI Workflows:</strong> Designed and deployed autonomous Agentic AI systems using
+                Microsoft Foundry (formerly Azure AI Studio), automating complex workflows for a platform circulating
+                over $80 billion annually.</li>
+              <li><strong>Generative AI & Data Retrieval:</strong> Implemented GenAI solutions integrated with Vector
+                Databases to enable semantic search and context management for large-scale datasets.</li>
+              <li><strong>Prompt Engineering:</strong> Applied advanced prompt engineering techniques to optimize LLM
+                performance, ensuring high accuracy, safety, and compliance.</li>
+              <li><strong>System Validation:</strong> Conducted system-level validation and managed software defects
+                using Azure DevOps.</li>
             </ul>
             <div class="timeline-techs">
               <span class="badge badge-secondary">C#</span>
@@ -293,7 +196,7 @@
             </div>
           </div>
         </div>
-        
+
         <!-- Experience Item 2 -->
         <div class="timeline-item reveal">
           <div class="timeline-dot"></div>
@@ -305,8 +208,10 @@
             <h3>Embedded Software Developer Trainee</h3>
             <h4>Skill Lync × NASSCOM, Bengaluru</h4>
             <ul>
-              <li>Specialized in Embedded Systems, microcontroller architecture, RTOS scheduler, and ISO 26262 automotive safety standard guidelines.</li>
-              <li>Programmed ARM Cortex-M architecture, managing GPIO, timers, interrupts, DMA, and platform driver development in C.</li>
+              <li>Specialized in Embedded Systems, microcontroller architecture, RTOS scheduler, and ISO 26262
+                automotive safety standard guidelines.</li>
+              <li>Programmed ARM Cortex-M architecture, managing GPIO, timers, interrupts, DMA, and platform driver
+                development in C.</li>
               <li>Read schematic prints and collaborated closely with hardware teams on board brings.</li>
             </ul>
             <div class="timeline-techs">
@@ -318,7 +223,7 @@
             </div>
           </div>
         </div>
-        
+
         <!-- Experience Item 3 -->
         <div class="timeline-item reveal">
           <div class="timeline-dot"></div>
@@ -341,7 +246,192 @@
             </div>
           </div>
         </div>
-        
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+      <div class="section-header">
+        <h2 class="section-title">Tech Arsenal</h2>
+        <p class="section-tagline">/usr/bin/skills</p>
+      </div>
+
+      <div class="skills-container glass-card reveal">
+        <div class="skills-tabs" role="tablist">
+          <button class="skills-tab-btn active" data-tab="skills-ai" role="tab" aria-selected="true" id="tab-ai">AI &
+            LLM</button>
+          <button class="skills-tab-btn" data-tab="skills-software" role="tab" aria-selected="false"
+            id="tab-software">DevOps & Cloud</button>
+          <button class="skills-tab-btn" data-tab="skills-embedded" role="tab" aria-selected="false"
+            id="tab-embedded">Embedded Systems (Prior)</button>
+          <button class="skills-tab-btn" data-tab="skills-protocols" role="tab" aria-selected="false"
+            id="tab-protocols">Protocols</button>
+        </div>
+
+        <!-- Tab Panels -->
+        <div class="skills-content-panel active" id="skills-ai" role="tabpanel" aria-labelledby="tab-ai">
+          <div class="skills-grid">
+            <div class="skill-item">
+              <span class="skill-name">Agentic AI Workflows</span>
+              <div class="skill-bar">
+                <div class="skill-fill" data-width="90%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">Generative AI</span>
+              <div class="skill-bar">
+                <div class="skill-fill" data-width="88%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">Microsoft Foundry</span>
+              <div class="skill-bar">
+                <div class="skill-fill" data-width="85%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">Prompt Engineering</span>
+              <div class="skill-bar">
+                <div class="skill-fill" data-width="92%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">Vector Databases</span>
+              <div class="skill-bar">
+                <div class="skill-fill" data-width="80%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">LLM Optimization</span>
+              <div class="skill-bar">
+                <div class="skill-fill" data-width="83%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skills-content-panel" id="skills-embedded" role="tabpanel" aria-labelledby="tab-embedded">
+          <div class="skills-grid">
+            <div class="skill-item">
+              <span class="skill-name">Embedded C</span>
+              <div class="skill-bar">
+                <div class="skill-fill" data-width="88%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">C/C++</span>
+              <div class="skill-bar">
+                <div class="skill-fill" data-width="85%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">FreeRTOS</span>
+              <div class="skill-bar">
+                <div class="skill-fill" data-width="78%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">ARM Cortex-M</span>
+              <div class="skill-bar">
+                <div class="skill-fill" data-width="80%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">STM32 Microcontrollers</span>
+              <div class="skill-bar">
+                <div class="skill-fill" data-width="82%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">Linux Driver Dev</span>
+              <div class="skill-bar">
+                <div class="skill-fill" data-width="70%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skills-content-panel" id="skills-protocols" role="tabpanel" aria-labelledby="tab-protocols">
+          <div class="skills-grid">
+            <div class="skill-item">
+              <span class="skill-name">UART</span>
+              <div class="skill-bar">
+                <div class="skill-fill" data-width="90%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">I2C</span>
+              <div class="skill-bar">
+                <div class="skill-fill" data-width="85%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">SPI</span>
+              <div class="skill-bar">
+                <div class="skill-fill" data-width="82%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">HAL Drivers</span>
+              <div class="skill-bar">
+                <div class="skill-fill" data-width="80%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">GDB Debugging</span>
+              <div class="skill-bar">
+                <div class="skill-fill" data-width="75%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">NVIC / DMA</span>
+              <div class="skill-bar">
+                <div class="skill-fill" data-width="78%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skills-content-panel" id="skills-software" role="tabpanel" aria-labelledby="tab-software">
+          <div class="skills-grid">
+            <div class="skill-item">
+              <span class="skill-name">Python</span>
+              <div class="skill-bar">
+                <div class="skill-fill" data-width="90%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">C# & .NET</span>
+              <div class="skill-bar">
+                <div class="skill-fill" data-width="80%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">Azure DevOps</span>
+              <div class="skill-bar">
+                <div class="skill-fill" data-width="85%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">Git & Version Control</span>
+              <div class="skill-bar">
+                <div class="skill-fill" data-width="90%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">VS Code / STM32Cube</span>
+              <div class="skill-bar">
+                <div class="skill-fill" data-width="88%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">Agile SDLC</span>
+              <div class="skill-bar">
+                <div class="skill-fill" data-width="82%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -351,131 +441,85 @@
         <h2 class="section-title">Signature Projects</h2>
         <p class="section-tagline">/usr/bin/projects</p>
       </div>
-      
+
       <div class="grid-2">
         <!-- Project 1 -->
         <div class="glass-card project-card reveal">
           <div class="project-header">
-            <h3>📱 DhanLaXmi</h3>
+            <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 0.5rem;">📱 DhanLaXmi</h3>
             <div class="project-meta">
               <span class="badge">Cross-Platform / Capacitor</span>
               <span class="badge badge-secondary">AFM & Gemma 3</span>
             </div>
           </div>
           <p class="project-desc">
-            A secure on-device AI financial advisor. Dynamically routes inference: leverages native Apple Foundation Models (AFM) on Apple Intelligence supported devices, and falls back to Gemma 3 1B for non-Apple Intelligence devices.
+            A secure on-device AI financial advisor. Dynamically routes inference: leverages native Apple Foundation
+            Models (AFM) on Apple Intelligence supported devices, and falls back to Gemma 3 1B for non-Apple
+            Intelligence devices.
           </p>
           <div class="project-tags">
-            <span>Capacitor</span> <span>ONNX Runtime</span> <span>AFM</span> <span>Gemma 3</span> <span>Local RAG</span>
+            <span>Capacitor</span> <span>ONNX Runtime</span> <span>AFM</span> <span>Gemma 3</span> <span>Local
+              RAG</span>
           </div>
         </div>
-        
+
         <!-- Project 2 -->
         <div class="glass-card project-card reveal">
           <div class="project-header">
-            <h3>🌐 Enterprise Agentic AI</h3>
+            <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 0.5rem;">🌐 Enterprise
+              Agentic AI</h3>
             <div class="project-meta">
               <span class="badge badge-cyan">Azure Foundry</span>
               <span class="badge badge-success">Production</span>
             </div>
           </div>
           <p class="project-desc">
-            Designed end-to-end Agentic AI systems on Microsoft Foundry that autonomously handle complex financial workflows. Integrated Vector Databases for semantic search over millions of records with sub-second retrieval.
+            Designed end-to-end Agentic AI systems on Microsoft Foundry that autonomously handle complex financial
+            workflows. Integrated Vector Databases for semantic search over millions of records with sub-second
+            retrieval.
           </p>
           <div class="project-tags">
             <span>Microsoft Foundry</span> <span>Python</span> <span>Vector DB</span> <span>LLM</span>
           </div>
         </div>
-        
+
         <!-- Project 3 -->
         <div class="glass-card project-card reveal">
           <div class="project-header">
-            <h3>🐱 Royal Paw Kitten</h3>
+            <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 0.5rem;">🐱 Royal Paw Kitten
+            </h3>
             <div class="project-meta">
               <span class="badge">React 19 / Vite 6</span>
               <span class="badge badge-cyan">Three.js 3D</span>
             </div>
           </div>
           <p class="project-desc">
-            Interactive breed care platform featuring 3D graphics (Three.js), data visualizations (Recharts), and generative AI assistants powered by the Gemini API with an Express backend.
+            Interactive breed care platform featuring 3D graphics (Three.js), data visualizations (Recharts), and
+            generative AI assistants powered by the Gemini API with an Express backend.
           </p>
           <div class="project-tags">
-            <span>React 19</span> <span>Three.js</span> <span>Tailwind v4</span> <span>Gemini API</span> <span>Express</span>
+            <span>React 19</span> <span>Three.js</span> <span>Tailwind v4</span> <span>Gemini API</span>
+            <span>Express</span>
           </div>
         </div>
-        
+
         <!-- Project 4 -->
         <div class="glass-card project-card reveal">
           <div class="project-header">
-            <h3>🤖 ARM Robotics Navigation</h3>
+            <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 0.5rem;">🤖 ARM Robotics
+              Navigation</h3>
             <div class="project-meta">
               <span class="badge badge-secondary">STM32 Cortex-M0+</span>
               <span class="badge">BareMetal C</span>
             </div>
           </div>
           <p class="project-desc">
-            Autonomous navigation system featuring Bluetooth wireless control, RFID-secured access, ultrasonic obstacle avoidance, and line-following sensors coordinated via bare-metal C HAL.
+            Autonomous navigation system featuring Bluetooth wireless control, RFID-secured access, ultrasonic obstacle
+            avoidance, and line-following sensors coordinated via bare-metal C HAL.
           </p>
           <div class="project-tags">
             <span>STM32G070</span> <span>HAL</span> <span>UART</span> <span>RFID</span> <span>Ultrasonic</span>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Education & Credentials Section -->
-    <section id="education">
-      <div class="section-header">
-        <h2 class="section-title">Credentials & Education</h2>
-        <p class="section-tagline">/usr/bin/credentials</p>
-      </div>
-      
-      <div class="grid-2">
-        <div class="glass-card reveal">
-          <h3 style="margin-bottom: 1.5rem; color: var(--color-cyan);">Certifications</h3>
-          <ul style="list-style: none; display: flex; flex-direction: column; gap: 1.25rem;">
-            <li style="border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 1rem;">
-              <span class="badge badge-cyan" style="margin-bottom: 0.5rem;">Google Cloud</span>
-              <h4 style="color: var(--color-text); margin-bottom: 0.25rem;">Professional Machine Learning Engineer</h4>
-              <a href="https://www.credly.com/badges/a7e17122-d929-4d03-ba4d-5978b7ae770e/public_url" target="_blank" style="font-size: 0.85rem; font-family: var(--font-mono);">View Verified Credly Badge &rarr;</a>
-            </li>
-            
-            <li style="border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 1rem;">
-              <span class="badge" style="margin-bottom: 0.5rem;">Accenture</span>
-              <h4 style="color: var(--color-text); margin-bottom: 0.25rem;">Accenture Tech Expressway - Distinction</h4>
-              <p style="font-size: 0.85rem; color: var(--color-text-muted);">C++ &amp; UNIX Stream · 2024 (Score: 87%)</p>
-            </li>
-            
-            <li>
-              <span class="badge badge-secondary" style="margin-bottom: 0.5rem;">NASSCOM</span>
-              <h4 style="color: var(--color-text); margin-bottom: 0.25rem;">Embedded Systems Masters Certification</h4>
-              <p style="font-size: 0.85rem; color: var(--color-text-muted);">Skill-Lync Career Program (Score: 71.7%)</p>
-            </li>
-          </ul>
-        </div>
-        
-        <div class="glass-card reveal">
-          <h3 style="margin-bottom: 1.5rem; color: var(--color-primary);">Education</h3>
-          <ul style="list-style: none; display: flex; flex-direction: column; gap: 1.25rem;">
-            <li style="border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 1rem;">
-              <span class="badge" style="margin-bottom: 0.5rem;">B.Tech</span>
-              <h4 style="color: var(--color-text); margin-bottom: 0.25rem;">Electrical &amp; Electronics Engineering</h4>
-              <p style="font-size: 0.9rem; color: var(--color-text-muted);">GMR Institute of Technology, Rajam (CGPA: 63.8%)</p>
-              <p style="font-size: 0.8rem; font-style: italic; color: var(--color-text-dark); margin-top: 0.25rem;">Capstone: Optimal Sizing of Renewable Energy Sources for a Smart Campus</p>
-            </li>
-            
-            <li style="border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 1rem;">
-              <span class="badge badge-secondary" style="margin-bottom: 0.5rem;">Class XII</span>
-              <h4 style="color: var(--color-text); margin-bottom: 0.25rem;">MPC (Maths, Physics, Chemistry)</h4>
-              <p style="font-size: 0.9rem; color: var(--color-text-muted);">Sri Chaitanya Junior College, Srikakulam (Score: 80.3%)</p>
-            </li>
-            
-            <li>
-              <span class="badge badge-cyan" style="margin-bottom: 0.5rem;">Class X</span>
-              <h4 style="color: var(--color-text); margin-bottom: 0.25rem;">SSC</h4>
-              <p style="font-size: 0.9rem; color: var(--color-text-muted);">Visakha High School, Srikakulam (Score: 92.0%)</p>
-            </li>
-          </ul>
         </div>
       </div>
     </section>
@@ -486,63 +530,67 @@
         <h2 class="section-title">Get In Touch</h2>
         <p class="section-tagline">/usr/bin/contact</p>
       </div>
-      
+
       <div class="contact-grid">
         <div class="contact-info reveal">
           <div class="contact-item">
             <div class="contact-icon">📧</div>
             <div class="contact-details">
-              <h4>Email</h4>
+              <h4 style="font-family: var(--font-heading);">Email</h4>
               <p>nithishkumarpujari@gmail.com</p>
             </div>
             <button class="btn-copy" data-copy="nithishkumarpujari@gmail.com" id="copy-email">Copy</button>
           </div>
-          
+
           <div class="contact-item">
             <div class="contact-icon">📱</div>
             <div class="contact-details">
-              <h4>Mobile</h4>
+              <h4 style="font-family: var(--font-heading);">Mobile</h4>
               <p>+91 8978812882</p>
             </div>
             <button class="btn-copy" data-copy="+918978812882" id="copy-phone">Copy</button>
           </div>
-          
+
           <div class="contact-item">
             <div class="contact-icon">💼</div>
             <div class="contact-details">
-              <h4>LinkedIn</h4>
+              <h4 style="font-family: var(--font-heading);">LinkedIn</h4>
               <p>linkedin.com/in/myselfnithish</p>
             </div>
-            <a href="https://linkedin.com/in/myselfnithish/" target="_blank" class="btn-copy" id="link-linkedin">Visit</a>
+            <a href="https://linkedin.com/in/myselfnithish/" target="_blank" class="btn-copy"
+              id="link-linkedin">Visit</a>
           </div>
-          
+
           <div class="contact-item">
             <div class="contact-icon">🐙</div>
             <div class="contact-details">
-              <h4>GitHub</h4>
+              <h4 style="font-family: var(--font-heading);">GitHub</h4>
               <p>github.com/NITHISHPUJARI</p>
             </div>
             <a href="https://github.com/NITHISHPUJARI" target="_blank" class="btn-copy" id="link-github">Visit</a>
           </div>
         </div>
-        
+
         <div class="glass-card reveal">
           <form class="contact-form" id="portfolio-contact-form" onsubmit="event.preventDefault();">
             <div class="form-group">
               <label for="contact-name">Name</label>
-              <input type="text" id="contact-name" name="name" class="form-control" placeholder="Enter your name" required>
+              <input type="text" id="contact-name" name="name" class="form-control" placeholder="Enter your name"
+                required>
             </div>
-            
+
             <div class="form-group">
               <label for="contact-email">Email</label>
-              <input type="email" id="contact-email" name="email" class="form-control" placeholder="Enter your email" required>
+              <input type="email" id="contact-email" name="email" class="form-control" placeholder="Enter your email"
+                required>
             </div>
-            
+
             <div class="form-group">
               <label for="contact-message">Message</label>
-              <textarea id="contact-message" name="message" class="form-control" placeholder="Type your message here..." required></textarea>
+              <textarea id="contact-message" name="message" class="form-control" placeholder="Type your message here..."
+                required></textarea>
             </div>
-            
+
             <button type="button" class="btn btn-primary" id="btn-submit-message">Send Message ⚡</button>
           </form>
         </div>
@@ -550,12 +598,37 @@
     </section>
   </main>
 
-  <footer>
+  <footer class="glass-footer">
     <div class="app-container">
-      <p>&copy; 2026 Pujari Nithish Kumar. All rights reserved.</p>
-      <p style="margin-top: 0.5rem; font-family: var(--font-mono); font-size: 0.8rem; color: var(--color-text-dark);">
-        Made with ♥, Agentic AI, and Silicon
-      </p>
+      <div class="footer-grid">
+        <div class="footer-col brand-col">
+          <a href="index.html" class="logo">NITHISH</a>
+          <p class="footer-desc">Agentic AI & Embedded Systems Engineer. Specializing in enterprise-scale LLM
+            orchestration and low-level precision.</p>
+        </div>
+        <div class="footer-col links-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col contact-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="mailto:nithishkumarpujari@gmail.com">nithishkumarpujari@gmail.com</a></li>
+            <li><a href="https://linkedin.com/in/myselfnithish/" target="_blank">LinkedIn</a></li>
+            <li><a href="https://github.com/NITHISHPUJARI" target="_blank">GitHub</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Pujari Nithish Kumar. All rights reserved.</p>
+        <p class="footer-tech">Made with ♥, Intelligence, and Silicon</p>
+      </div>
     </div>
   </footer>
 
@@ -567,7 +640,7 @@
     <div class="settings-panel glass-card" id="theme-settings-panel">
       <h3>Aesthetic Controls</h3>
       <p class="settings-desc">Customize system theme and transparency options.</p>
-      
+
       <div class="setting-group">
         <label>Theme</label>
         <div class="segmented-control">
@@ -575,7 +648,7 @@
           <button class="segment-btn" data-theme-val="light" id="btn-theme-light">Light</button>
         </div>
       </div>
-      
+
       <div class="setting-group">
         <div class="setting-label-row">
           <label for="glass-intensity">Liquid Glass</label>
@@ -590,7 +663,12 @@
     </div>
   </div>
 
+  <!-- Three.js Library & Render System -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="three-canvas.js?v=3.9.0"></script>
+
   <!-- Portfolio Logic -->
-  <script src="index.js?v=3.3.0"></script>
+  <script src="index.js?v=3.9.0"></script>
 </body>
+
 </html>

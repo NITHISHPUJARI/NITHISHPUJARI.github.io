@@ -1,4 +1,32 @@
-document.addEventListener('DOMContentLoaded', () => {
+function initPortfolio() {
+  // --- Prevent page auto-scroll restoration on refresh/reload ---
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+
+  const handleInitialScroll = () => {
+    if (window.location.hash) {
+      const targetEl = document.querySelector(window.location.hash);
+      if (targetEl) {
+        setTimeout(() => {
+          targetEl.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+        return;
+      }
+    }
+    window.scrollTo(0, 0);
+  };
+
+  handleInitialScroll();
+
+  if (document.readyState === 'complete') {
+    handleInitialScroll();
+  } else {
+    window.addEventListener('load', () => {
+      handleInitialScroll();
+    });
+  }
+
   // --- Terminal Typing Animation ---
   const terminalLines = [
     { text: 'npm run start-ai', delay: 500, class: 'command' },
@@ -69,15 +97,13 @@ document.addEventListener('DOMContentLoaded', () => {
       inputLine.className = 'terminal-input-line';
       inputLine.innerHTML = `
         <span class="terminal-prompt">nithish@system:~$</span>
-        <input type="text" id="terminal-input" autofocus autocomplete="off" spellcheck="false" />
+        <input type="text" id="terminal-input" autocomplete="off" spellcheck="false" />
       `;
       terminalBody.appendChild(inputLine);
+      terminalBody.scrollTop = terminalBody.scrollHeight;
 
       const inputEl = document.getElementById('terminal-input');
       if (inputEl) {
-        // Focus input on load
-        inputEl.focus();
-
         // Keep input focused when clicking inside terminal window
         const terminalWindow = document.querySelector('.terminal-window');
         if (terminalWindow) {
@@ -94,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Append command to visual output history
             const cmdOutput = document.createElement('div');
             cmdOutput.className = 'command';
-            cmdOutput.innerHTML = `<span class="terminal-prompt">nithish@system:~$</span> <span style="color: var(--color-text);">${escapeHtml(command)}</span>`;
+            cmdOutput.innerHTML = `<span class="terminal-prompt">nithish@system:~$</span> <span style="color: var(--color-terminal-command);">${escapeHtml(command)}</span>`;
             // Insert before the input line
             terminalBody.insertBefore(cmdOutput, inputLine);
 
@@ -279,6 +305,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-link');
 
+  const pagePath = window.location.pathname.split('/').pop();
+  const isHomePage = pagePath === '' || pagePath === 'index.html' || window.location.pathname.endsWith('/');
+
   function scrollSpy() {
     const scrollY = window.pageYOffset;
 
@@ -298,7 +327,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  window.addEventListener('scroll', scrollSpy);
+  if (isHomePage && sections.length > 0) {
+    window.addEventListener('scroll', scrollSpy);
+  }
 
   // --- Mobile Navigation Menu Toggle ---
   const mobileMenuBtn = document.createElement('button');
@@ -355,13 +386,13 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- Scroll Progress Bar & Dynamic Scroll Ratio ---
   const scrollProgressBar = document.getElementById('scroll-progress-bar');
   document.documentElement.style.setProperty('--scroll-ratio', '0');
-  
+
   window.addEventListener('scroll', () => {
     const scrollTop = window.scrollY;
     const docHeight = document.documentElement.scrollHeight - window.innerHeight;
     const scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
     const scrollRatio = docHeight > 0 ? scrollTop / docHeight : 0;
-    
+
     if (scrollProgressBar) {
       scrollProgressBar.style.width = scrollPercent + '%';
     }
@@ -427,22 +458,25 @@ document.addEventListener('DOMContentLoaded', () => {
   // Liquid Glass intensity controls
   function updateGlassStyle(value) {
     const isLightMode = document.documentElement.getAttribute('data-theme') === 'light';
-    const opacityPercent = 10 + (value / 100) * 70;
-    const opacityHoverPercent = opacityPercent + 6;
-    const blur = Math.max(1, 1 - (value / 100) * 1);
+    // Shunted the range to keep panels highly glassy and translucent instead of solid tinted boxes
+    const opacityPercent = 5 + (value / 100) * 35;
+    const opacityHoverPercent = opacityPercent + 5;
+    const blur = 2 + (value / 100) * 4;
     const saturation = Math.max(120, 180 - (value / 100) * 60);
-    const borderOpacityPercent = 12 + (value / 100) * 18;
+    const borderOpacityPercent = 4 + (value / 100) * 12;
 
     const borderOpacityDecimal = borderOpacityPercent / 100;
-    
-    let topLeftBorderColor, bottomRightBorderColor;
+
+    let topLeftBorderColor, mirageBorderColor, bottomRightBorderColor;
     if (isLightMode) {
-      // Light Mode: bright white top-left highlight, dark transparent bottom-right edge for readability
+      // Light Mode: bright white top-left highlight, purple chromatic shimmer, dark bottom-right
       topLeftBorderColor = `rgba(255, 255, 255, ${Math.max(0.75, Math.min(1.0, borderOpacityDecimal * 5.0))})`;
+      mirageBorderColor = `rgba(139, 92, 246, ${borderOpacityDecimal * 1.2})`;
       bottomRightBorderColor = `rgba(0, 0, 0, ${Math.max(0.12, borderOpacityDecimal * 0.8)})`;
     } else {
-      // Dark Mode: white top-left highlight, dark transparent bottom-right edge to create depth/bevel shadow
+      // Dark Mode: white top-left highlight, cyan/blue chromatic shimmer, dark transparent bottom-right
       topLeftBorderColor = `rgba(255, 255, 255, ${Math.max(0.25, Math.min(1.0, borderOpacityDecimal * 4.0))})`;
+      mirageBorderColor = `rgba(6, 182, 212, ${borderOpacityDecimal * 1.5})`;
       bottomRightBorderColor = `rgba(0, 0, 0, ${Math.max(0.2, borderOpacityDecimal * 1.5)})`;
     }
 
@@ -452,6 +486,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.documentElement.style.setProperty('--glass-saturation', `${saturation}%`);
     document.documentElement.style.setProperty('--glass-border-opacity', `${borderOpacityPercent}%`);
     document.documentElement.style.setProperty('--glass-border-top-left', topLeftBorderColor);
+    document.documentElement.style.setProperty('--glass-border-mirage', mirageBorderColor);
     document.documentElement.style.setProperty('--glass-border-bottom-right', bottomRightBorderColor);
 
     let labelText = 'Frosted Glass';
@@ -479,4 +514,11 @@ document.addEventListener('DOMContentLoaded', () => {
     glassSlider.value = savedGlass;
     updateGlassStyle(savedGlass);
   }
-});
+}
+
+// Robust execution wrapper
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initPortfolio);
+} else {
+  initPortfolio();
+}

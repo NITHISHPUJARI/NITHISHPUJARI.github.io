@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Signature Projects | Pujari Nithish Kumar</title>
+  <meta name="description" content="Showcase of engineering projects: DhanLaXmi (on-device AI), multi-agent systems on Microsoft Foundry, and ARM robotics.">
+  
+  <script>
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    if (!window.location.hash) {
+      window.scrollTo(0, 0);
+    }
+  </script>
+  <!-- Custom CSS Design System -->
+  <link rel="stylesheet" href="index.css?v=3.9.0">
+</head>
+<body>
+  <!-- Fixed 3D background -->
+  <canvas id="three-bg-canvas"></canvas>
+
+  <!-- Header & Navigation -->
+  <header>
+    <div class="scroll-progress" id="scroll-progress-bar"></div>
+    <div class="nav-container">
+      <a href="index.html" class="logo" id="nav-logo">NITHISH</a>
+      <ul class="nav-links" id="nav-links-menu">
+        <li class="nav-link" data-section="hero"><a href="index.html#hero" id="link-hero">Home</a></li>
+        <li class="nav-link" data-section="about"><a href="index.html#about" id="link-about">About</a></li>
+        <li class="nav-link" data-section="skills"><a href="index.html#skills" id="link-skills">Skills</a></li>
+        <li class="nav-link" data-section="projects"><a href="index.html#projects" id="link-projects">Projects</a></li>
+        <li class="nav-link" data-section="contact"><a href="index.html#contact" id="link-contact">Contact</a></li>
+        <li class="nav-link"><a href="Pujari_NithishKumar_Resume.pdf" download id="link-resume" style="color: var(--color-cyan); font-weight: 700;">Resume 📥</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="app-container">
+    
+    <!-- Projects Section -->
+    <section id="projects">
+      <div class="section-header">
+        <h1 class="section-title">Signature Projects</h1>
+        <p class="section-tagline">/usr/bin/projects</p>
+      </div>
+      
+      <div class="grid-2">
+        <!-- Project 1 -->
+        <div class="glass-card project-card reveal">
+          <div class="project-header">
+            <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 0.5rem;">📱 DhanLaXmi</h3>
+            <div class="project-meta">
+              <span class="badge">Cross-Platform / Capacitor</span>
+              <span class="badge badge-secondary">AFM & Gemma 3</span>
+            </div>
+          </div>
+          <p class="project-desc">
+            A secure on-device AI financial advisor. Dynamically routes inference: leverages native Apple Foundation Models (AFM) on Apple Intelligence supported devices, and falls back to Gemma 3 1B for non-Apple Intelligence devices.
+          </p>
+          <div class="project-tags">
+            <span>Capacitor</span> <span>ONNX Runtime</span> <span>AFM</span> <span>Gemma 3</span> <span>Local RAG</span>
+          </div>
+        </div>
+        
+        <!-- Project 2 -->
+        <div class="glass-card project-card reveal">
+          <div class="project-header">
+            <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 0.5rem;">🌐 Enterprise Agentic AI</h3>
+            <div class="project-meta">
+              <span class="badge badge-cyan">Azure Foundry</span>
+              <span class="badge badge-success">Production</span>
+            </div>
+          </div>
+          <p class="project-desc">
+            Designed end-to-end Agentic AI systems on Microsoft Foundry that autonomously handle complex financial workflows. Integrated Vector Databases for semantic search over millions of records with sub-second retrieval.
+          </p>
+          <div class="project-tags">
+            <span>Microsoft Foundry</span> <span>Python</span> <span>Vector DB</span> <span>LLM</span>
+          </div>
+        </div>
+        
+        <!-- Project 3 -->
+        <div class="glass-card project-card reveal">
+          <div class="project-header">
+            <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 0.5rem;">🐱 Royal Paw Kitten</h3>
+            <div class="project-meta">
+              <span class="badge">React 19 / Vite 6</span>
+              <span class="badge badge-cyan">Three.js 3D</span>
+            </div>
+          </div>
+          <p class="project-desc">
+            Interactive breed care platform featuring 3D graphics (Three.js), data visualizations (Recharts), and generative AI assistants powered by the Gemini API with an Express backend.
+          </p>
+          <div class="project-tags">
+            <span>React 19</span> <span>Three.js</span> <span>Tailwind v4</span> <span>Gemini API</span> <span>Express</span>
+          </div>
+        </div>
+        
+        <!-- Project 4 -->
+        <div class="glass-card project-card reveal">
+          <div class="project-header">
+            <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 0.5rem;">🤖 ARM Robotics Navigation</h3>
+            <div class="project-meta">
+              <span class="badge badge-secondary">STM32 Cortex-M0+</span>
+              <span class="badge">BareMetal C</span>
+            </div>
+          </div>
+          <p class="project-desc">
+            Autonomous navigation system featuring Bluetooth wireless control, RFID-secured access, ultrasonic obstacle avoidance, and line-following sensors coordinated via bare-metal C HAL.
+          </p>
+          <div class="project-tags">
+            <span>STM32G070</span> <span>HAL</span> <span>UART</span> <span>RFID</span> <span>Ultrasonic</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="glass-footer">
+    <div class="app-container">
+      <div class="footer-grid">
+        <div class="footer-col brand-col">
+          <a href="index.html" class="logo">NITHISH</a>
+          <p class="footer-desc">Agentic AI & Embedded Systems Engineer. Specializing in enterprise-scale LLM orchestration and low-level precision.</p>
+        </div>
+        <div class="footer-col links-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="index.html#hero">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#skills">Skills</a></li>
+            <li><a href="index.html#projects">Projects</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col contact-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="mailto:nithishkumarpujari@gmail.com">nithishkumarpujari@gmail.com</a></li>
+            <li><a href="https://linkedin.com/in/myselfnithish/" target="_blank">LinkedIn</a></li>
+            <li><a href="https://github.com/NITHISHPUJARI" target="_blank">GitHub</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Pujari Nithish Kumar. All rights reserved.</p>
+        <p class="footer-tech">Made with ♥, Three.js, and Silicon</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Visual Settings Panel -->
+  <div class="settings-widget" id="theme-settings-widget">
+    <button class="settings-toggle-btn" id="btn-settings-toggle" aria-label="Aesthetic settings">
+      ⚙️
+    </button>
+    <div class="settings-panel glass-card" id="theme-settings-panel">
+      <h3>Aesthetic Controls</h3>
+      <p class="settings-desc">Customize system theme and transparency options.</p>
+      
+      <div class="setting-group">
+        <label>Theme</label>
+        <div class="segmented-control">
+          <button class="segment-btn active" data-theme-val="dark" id="btn-theme-dark">Dark</button>
+          <button class="segment-btn" data-theme-val="light" id="btn-theme-light">Light</button>
+        </div>
+      </div>
+      
+      <div class="setting-group">
+        <div class="setting-label-row">
+          <label for="glass-intensity">Liquid Glass</label>
+          <span id="glass-value-label">Frosted Glass</span>
+        </div>
+        <input type="range" id="glass-intensity" min="0" max="100" value="30" class="glass-slider" />
+        <div class="slider-labels">
+          <span>Glassy</span>
+          <span>Tinted</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Three.js Library & Render System -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="three-canvas.js?v=3.9.0"></script>
+
+  <!-- Portfolio Logic -->
+  <script src="index.js?v=3.9.0"></script>
+</body>
+</html>

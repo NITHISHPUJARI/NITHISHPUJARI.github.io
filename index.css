@@ -75,16 +75,18 @@
     --color-border-glow: hsla(262, 80%, 65%, 0.4);
     
     /* Premium Glass shadows and bevel highlights */
-    --color-glass-bevel: rgba(255, 255, 255, 0.12);
+    --color-glass-bevel: rgba(255, 255, 255, 0.02);
     --color-glass-shadow: rgba(0, 0, 0, 0.35);
     
     /* Terminal Colors */
-    --color-terminal-bg: rgba(5, 5, 16, 0.6);
-    --color-terminal-header: rgba(11, 11, 26, 0.85);
+    --color-terminal-bg: rgba(5, 5, 16, 0.72);
+    --color-terminal-header: rgba(11, 11, 26, 0.9);
     --color-terminal-text: #a78bfa;
     --color-terminal-prompt: var(--color-cyan);
     --color-terminal-success: hsl(142, 70%, 45%);
     --color-terminal-border: rgba(255, 255, 255, 0.1);
+    --color-terminal-command: hsl(210, 40%, 98%);
+    --color-terminal-system: hsl(215, 25%, 72%);
     
     --color-text: hsl(210, 40%, 98%);
     --color-text-muted: hsl(215, 25%, 72%);
@@ -126,16 +128,18 @@
     --color-border-glow: hsla(var(--hue-primary), 80%, 45%, 0.4);
     
     /* Premium Glass shadows and bevel highlights for light mode */
-    --color-glass-bevel: rgba(255, 255, 255, 0.65);
+    --color-glass-bevel: rgba(255, 255, 255, 0.05);
     --color-glass-shadow: rgba(0, 0, 0, 0.08);
     
-    /* Terminal Colors for Light Mode */
-    --color-terminal-bg: rgba(255, 255, 255, 0.65);
-    --color-terminal-header: rgba(230, 230, 235, 0.85);
-    --color-terminal-text: hsl(240, 10%, 25%);
-    --color-terminal-prompt: hsl(var(--hue-cyan), 90%, 35%);
-    --color-terminal-success: hsl(142, 70%, 35%);
-    --color-terminal-border: rgba(0, 0, 0, 0.08);
+    /* Terminal Colors for Light Mode (Kept dark/contrasted for developer aesthetic) */
+    --color-terminal-bg: rgba(5, 5, 16, 0.82);
+    --color-terminal-header: rgba(11, 11, 26, 0.92);
+    --color-terminal-text: #a78bfa;
+    --color-terminal-prompt: hsl(var(--hue-cyan), 90%, 50%);
+    --color-terminal-success: hsl(142, 70%, 45%);
+    --color-terminal-border: rgba(255, 255, 255, 0.12);
+    --color-terminal-command: hsl(210, 40%, 98%);
+    --color-terminal-system: hsl(215, 25%, 72%);
     
     --color-text: hsl(240, 10%, 15%);
     --color-text-muted: hsl(240, 6%, 40%);
@@ -189,7 +193,8 @@
 @layer layout {
   .app-container {
     max-width: 1200px;
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
     padding: 0 1.5rem;
   }
 
@@ -215,7 +220,7 @@
     left: 0;
     width: 100%;
     height: 1px;
-    background: linear-gradient(var(--color-border-angle), var(--glass-border-top-left), var(--glass-border-bottom-right));
+    background: linear-gradient(var(--color-border-angle), var(--glass-border-top-left), var(--glass-border-mirage), var(--glass-border-bottom-right));
     mix-blend-mode: overlay;
     pointer-events: none;
   }
@@ -278,7 +283,7 @@
   }
 
   main {
-    margin-top: 100px;
+    margin-top: 130px;
   }
 
   section {
@@ -318,16 +323,7 @@
     font-family: var(--font-mono);
   }
 
-  footer {
-    padding: 40px 0;
-    border-top: 1px solid var(--color-border);
-    background-color: rgba(var(--color-surface-base), 0.5);
-    text-align: center;
-    color: var(--color-text-dark);
-    font-size: 0.9rem;
-    backdrop-filter: blur(var(--glass-blur));
-    -webkit-backdrop-filter: blur(var(--glass-blur));
-  }
+  /* Old footer styles removed - replaced with glass-footer */
 
   /* Grid Layouts */
   .grid-2 {
@@ -371,6 +367,7 @@
     padding: 1px;
     background: linear-gradient(var(--color-border-angle), 
       var(--glass-border-top-left) 0%, 
+      var(--glass-border-mirage) 50%, 
       var(--glass-border-bottom-right) 100%);
     -webkit-mask: 
       linear-gradient(#fff 0 0) content-box, 
@@ -607,6 +604,7 @@
     padding: 1px;
     background: linear-gradient(var(--color-border-angle), 
       var(--glass-border-top-left) 0%, 
+      var(--glass-border-mirage) 50%, 
       var(--glass-border-bottom-right) 100%);
     -webkit-mask: 
       linear-gradient(#fff 0 0) content-box, 
@@ -649,11 +647,10 @@
     padding: 1.25rem;
     font-size: 0.9rem;
     color: var(--color-terminal-text);
-    min-height: 120px;
+    height: 240px;
     display: flex;
     flex-direction: column;
     overflow-y: auto;
-    max-height: 250px;
     scrollbar-width: none;
     transition: color 0.3s ease;
   }
@@ -775,6 +772,7 @@
     padding: 1px;
     background: linear-gradient(var(--color-border-angle), 
       var(--glass-border-top-left) 0%, 
+      var(--glass-border-mirage) 50%, 
       var(--glass-border-bottom-right) 100%);
     -webkit-mask: 
       linear-gradient(#fff 0 0) content-box, 
@@ -1137,10 +1135,10 @@
     line-height: 1.4;
   }
   #terminal-text .command {
-    color: var(--color-text);
+    color: var(--color-terminal-command);
   }
   #terminal-text .system {
-    color: var(--color-text-dark);
+    color: var(--color-terminal-system);
   }
   #terminal-text .success {
     color: var(--color-terminal-success);
@@ -1442,5 +1440,145 @@
     font-size: 0.7rem;
     font-family: var(--font-mono);
     color: var(--color-text-dark);
+  }
+
+  /* Three.js 3D Viewports & Background */
+  #three-bg-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -5;
+    pointer-events: none;
+    background: transparent;
+  }
+
+  .hero-3d-container {
+    position: relative;
+    width: 100%;
+    height: 420px;
+    max-width: 480px;
+    justify-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: visible;
+  }
+
+  #hero-3d-canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+    outline: none;
+  }
+
+  @media (max-width: 968px) {
+    .hero-3d-container {
+      height: 340px;
+      margin-top: 1.5rem;
+    }
+  }
+
+  /* Page transition animation */
+  main.app-container {
+    animation: pageFadeIn 0.6s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+  }
+
+  @keyframes pageFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(15px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Standard Glass Footer */
+  .glass-footer {
+    padding: 60px 0 35px 0;
+    border-top: 1px solid var(--color-border);
+    background: rgba(var(--color-surface-base), 0.15);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    position: relative;
+    z-index: 10;
+    margin-top: 80px;
+    width: 100%;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 40px;
+    text-align: left;
+  }
+
+  .footer-col h4 {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 1.2rem;
+    color: var(--color-text);
+  }
+
+  .footer-col ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .footer-col a {
+    color: var(--color-text-muted);
+    transition: var(--transition-fast);
+    font-size: 0.95rem;
+  }
+
+  .footer-col a:hover {
+    color: var(--color-primary);
+  }
+
+  .brand-col .logo {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    display: inline-block;
+  }
+
+  .footer-desc {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    max-width: 320px;
+  }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-size: 0.85rem;
+    color: var(--color-text-dark);
+  }
+
+  .footer-tech {
+    font-family: var(--font-mono);
+  }
+
+  @media (max-width: 768px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    .footer-bottom {
+      flex-direction: column;
+      text-align: center;
+    }
   }
 }
